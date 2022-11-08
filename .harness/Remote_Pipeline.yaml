@@ -1,0 +1,30 @@
+pipeline:
+  name: Remote Pipeline
+  identifier: Remote_Pipeline
+  projectIdentifier: Himanshu_Demo
+  orgIdentifier: KD
+  tags: {}
+  stages:
+    - stage:
+        name: Custom
+        identifier: Custom
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: Echo
+                  identifier: Echo
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: echo "Hello"
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
